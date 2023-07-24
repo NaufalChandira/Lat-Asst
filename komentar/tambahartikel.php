@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label>Detail Isi Artikel</label>
-                            <input type="text" name="detail_isi_artikel" class="form-control">
+                            <textarea type="text" name="detail_isi_artikel" class="form-control"></textarea>
                             <span class="help-block"></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">

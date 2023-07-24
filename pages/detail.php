@@ -97,8 +97,56 @@ if (isset($_GET['id_artikel'])) {
             <h5>Detail Acara</h5>
             <p><?php echo $data['detail_isi_artikel']; ?></p>
             <h5>Komentar</h5>
-            <h6>Nama</h6>
-            <p><?php echo $comment['nama']; ?></p>
+            <h5>Nama</h5>
+            <p><?php echo $data['nama']; ?></p>
+            <h5>Komentar</h5>
+            <p><?php echo $data['komentar']; ?></p>
+            <section class="mb-5">
+          <div class="card bg-light">
+            <div class="card-body">
+              <!-- Comment form-->
+              <form class="mx-1 mx-md-4" method="POST" action="../komentar/prosestambahK.php" enctype="multipart/form-data">
+                <input type="hidden" name="id_artikel" value="<?php echo $id_artikel; ?>">
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fas fa-signature fa-lg me-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="text" name="nama" id="form3Example4c" autofocus="" required="" class="form-control" />
+                    <label class="form-label" for="form3Example4c">Nama</label>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fas fa-at fa-lg me-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <input type="text" name="email" id="form3Example4c" autofocus="" required="" class="form-control" />
+                    <label class="form-label" for="form3Example4c">email</label>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <i class="fas fa-comment fa-lg me-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                    <textarea type="text" name="komentar" id="textAreaExample" rows="4"
+                      class=" form-control"></textarea>
+                    <label class="form-label" for="form3Example4cd">komentar</label>
+                  </div>
+                </div>
+                <div class="form-group ms-4 ps-3 mb-5">
+                  <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+              </form>
+              <?php
+              if (mysqli_num_rows($result) > 0) {
+                // Loop through each comment data
+                while ($comment = mysqli_fetch_assoc($result)) {
+                  ?>
+                  <?php
+                }
+              } else {
+                echo '<div class="fw-bold">No comments found.</div>';
+              }
+              ?>
+            </div>
+          </div>
+        </section>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#9AC5F4" fill-opacity="1" d="M0,288L40,288C80,288,160,288,240,272C320,256,400,224,480,192C560,160,640,128,720,149.3C800,171,880,245,960,245.3C1040,245,1120,171,1200,144C1280,117,1360,139,1400,149.3L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>    
     </main>

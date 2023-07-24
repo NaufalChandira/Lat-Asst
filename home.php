@@ -130,7 +130,7 @@ if (isset($_GET['search'])) {
               <p class="card-text">
               <?php echo substr($row['detail_artikel'], 0, 500); ?> 
               </p>
-              <a href="./pages/detail.php=<?php echo $row['id_artikel']; ?>" class="btn float-end">Baca Selengkapnya -></a>
+              <a href="./pages/detail.php?id_artikel=<?php echo $row['id_artikel']; ?>" class="btn float-end">Baca Selengkapnya -></a>
             </div>
           </div>
         </div>
